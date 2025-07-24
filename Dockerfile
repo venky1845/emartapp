@@ -8,7 +8,7 @@ WORKDIR /usr/src/app
 COPY nodeapi/ ./nodeapi/
 RUN cd nodeapi && npm install
 
-FROM node:14
+ROM node:14
 WORKDIR /usr/src/app/
 COPY --from=server-build /usr/src/app/nodeapi/ ./
 COPY --from=ui-build /usr/src/app/client/dist ./client/dist
